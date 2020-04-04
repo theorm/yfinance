@@ -300,8 +300,9 @@ class TickerBase():
 
         # sustainability
         d = {}
-        print('esgScores', data.get('esgScores'))
-        if isinstance(data.get('esgScores'), dict):
+        # ESG sometimes contains an error
+        if isinstance(data.get('esgScores'), dict) and 'err' not in data.get('esgScores'):
+
             for item in data['esgScores']:
                 if not isinstance(data['esgScores'][item], (dict, list)):
                     d[item] = data['esgScores'][item]
