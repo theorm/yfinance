@@ -300,6 +300,7 @@ class TickerBase():
 
         # sustainability
         d = {}
+        print('esgScores', data.get('esgScores'))
         if isinstance(data.get('esgScores'), dict):
             for item in data['esgScores']:
                 if not isinstance(data['esgScores'][item], (dict, list)):
@@ -307,6 +308,7 @@ class TickerBase():
 
             s = _pd.DataFrame(index=[0], data=d)[-1:].T
             s.columns = ['Value']
+            print('esg', s)
             s.index.name = '%.f-%.f' % (
                 s[s.index == 'ratingYear']['Value'].values[0],
                 s[s.index == 'ratingMonth']['Value'].values[0])
