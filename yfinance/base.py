@@ -309,7 +309,6 @@ class TickerBase():
 
             s = _pd.DataFrame(index=[0], data=d)[-1:].T
             s.columns = ['Value']
-            print('esg', s)
             s.index.name = '%.f-%.f' % (
                 s[s.index == 'ratingYear']['Value'].values[0],
                 s[s.index == 'ratingMonth']['Value'].values[0])
