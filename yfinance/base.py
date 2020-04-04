@@ -317,7 +317,7 @@ class TickerBase():
         # info (be nice to python 2)
         self._info = {}
         items = ['summaryProfile', 'summaryDetail', 'quoteType',
-                 'defaultKeyStatistics', 'assetProfile', 'summaryDetail']
+                 'defaultKeyStatistics', 'assetProfile', 'summaryDetail', 'price']
         for item in items:
             if isinstance(data.get(item), dict):
                 self._info.update(data[item])
